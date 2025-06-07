@@ -10,19 +10,22 @@ import UnlockFullLearningPotential from "@/components/Dashboard/UnlockFullLearni
 import BasdSwissExcellenceAIResearch from "@/components/Dashboard/BasdSwissExcellenceAIResearch";
 import MeetingScholeTeam from "@/components/Dashboard/MeetingScholeTeam";
 import Footer from "@/components/Dashboard/Footer";
+import SummaryTextReveal from "@/components/Dashboard/SummaryTextReveal";
 
-export default function Home() {
+export default function Dashboard() {
 
   return (
     <>
-      <div className="bg-black text-white">
+      <div className="bg-[var(--color-primary)] text-[var(--color-text)]">
+        <div className="h-1 bg-black"></div>
         <Header />
         <NewVisionLearningAI />
         <InstructionsCompanies />
-        <hr className="mx-auto my-8 max-w-[1200px] text-[#101010]"></hr>
+        <SummaryTextReveal />
+        <hr className="mx-auto my-8 max-w-[1200px] text-[var(--color-secondary)]"></hr>
         <CompetitiveEdge />
         <UnlockFullLearningPotential />
-        <hr className="my-24 mx-auto max-w-[1000px] text-[#101010]"></hr>
+        <hr className="my-24 mx-auto max-w-[1000px] text-[var(--color-secondary)]"></hr>
         <ExploreOurDynamicLearningFormats />
         <EmpowerAcrossVariousDomains />
         <BasdSwissExcellenceAIResearch />

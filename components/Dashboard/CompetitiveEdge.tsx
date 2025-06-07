@@ -4,10 +4,10 @@ import FadeInSection from "../FadeInSection";
 
 export default function CompetitiveEdge() {
     return (
-        <div className="mx-8 bg-[#101010] rounded-lg">
+        <div className="mx-8 bg-[var(--color-secondary)] rounded-lg">
             <div className="flex items-center mx-auto max-w-[1000px] px-4 py-24 my-24 gap-8">
                 <div className="w-1/2">
-                    <div className="text-[#A594FD] text-2xl">
+                    <div className="text-[#FFA500] text-2xl">
                         <GrowIcon className="mr-3 inline [vertical-align:baseline]" />
                         <span>Your Competitive Edge</span>
                     </div>

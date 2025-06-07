@@ -39,7 +39,7 @@ export default function MeetingScholeTeam() {
                     ))}
                 </Swiper>
             </div>
-            <div className="bg-[#101010] p-40 text-center">
+            <div className="bg-[var(--color-secondary)] p-40 text-center">
                 <div className="m-8 text-xl">We&apos;re growing! Scholé is excited to welcome Aybars, Adrien, Yannis, Jeremy, Othmane and Rohit to our team at EPFL.</div>
                 <Image className="mx-auto" src="/ScholeTeam.jpeg" alt="image load is failed." width={1000} height={1000} />
             </div>

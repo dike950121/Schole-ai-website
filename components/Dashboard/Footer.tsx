@@ -5,7 +5,7 @@ export default function Footer() {
         <>
             <div className="flex justify-evenly gap-20 py-20 bg-white text-black">
                 <div className="w-auto my-auto [height:fit-content] vertical-middle relative">
-                    <Image src="/Logo.png" alt="logo" width={300} height={300} />
+                    <Image src="/Logo-dark.png" alt="logo" width={300} height={300} />
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="font-bold my-2 text-3xl">Location:</div>
@@ -31,7 +31,7 @@ export default function Footer() {
                     <div>Terms of Services</div>
                 </div>
             </div>
-            <div className="bg-black p-4 text-center">© Scholé 2024. All rights reserved.</div>
+            <div className="bg-black p-3 text-center">© Scholé 2024. All rights reserved.</div>
         </>
     );
 }
