@@ -37,7 +37,7 @@ function HeaderContent() {
 
     return (
         <>
-            <div className="flex items-center justify-between bg-white px-4 md:px-32 gap-12 w-full">
+            <div className="flex items-center justify-between bg-[var(--color-primary)] px-4 md:px-32 gap-12 w-full">
                 <Link href="/" className='flex items-center w-auto h-[100px]'>
                     <Image src={logourl} alt="logo" width={200} height={200} />
                 </Link>
