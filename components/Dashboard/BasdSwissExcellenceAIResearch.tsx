@@ -16,31 +16,33 @@ const imageTexts = [
 export default function BasdSwissExcellenceAIResearch() {
     const [activeIndex, setActiveIndex] = useState(0);
     const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = imageRefs.current.findIndex(ref => ref === entry.target);
-                        if (index !== -1) {
-                            setActiveIndex(index);
-                        }
-                    }
-                });
-            },
-            {
-                threshold: 0.5,
-                rootMargin: '-100px 0px'
+        const handleScroll = () => {
+            const containerRect = containerRef.current?.getBoundingClientRect();
+            if (!containerRect) return;
+
+            const triangleY = containerRect.top + containerRect.height / 2;
+
+            const newActiveIndex = imageRefs.current.findIndex(ref => {
+                if (!ref) return false;
+                const rect = ref.getBoundingClientRect();
+                return triangleY >= rect.top && triangleY <= rect.bottom;
+            });
+
+            if (newActiveIndex !== -1 && newActiveIndex !== activeIndex) {
+                setActiveIndex(newActiveIndex);
             }
-        );
+        };
 
-        imageRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
+        window.addEventListener('scroll', handleScroll);
 
-        return () => observer.disconnect();
-    }, []);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [activeIndex]);
+
 
     return (
         <div className="max-w-[1500px] px-8 text-center mx-auto">
@@ -51,7 +53,7 @@ export default function BasdSwissExcellenceAIResearch() {
                 </div>
             </div>
             <div className="flex gap-8 relative text-center">
-                <div className="py-8 w-1/3 justify-end xl:justify-between xl:w-1/2 sticky flex gap-8 top-0 [height:fit-content]">
+                <div ref={containerRef} className="py-8 w-1/3 justify-end xl:justify-between xl:w-1/2 sticky flex gap-8 top-0 [height:fit-content]">
                     <div className="hidden xl:block w-3/5">
                         <div className="text-[40px] font-bold my-8 w-[90%] mx-auto">Based on Swiss Excellence in AI Research</div>
                         <div className="text-2xl text-neutral-500 mt-4">
@@ -62,9 +64,9 @@ export default function BasdSwissExcellenceAIResearch() {
                         {imageTexts.map((text, index) => (
                             <div
                                 key={index}
-                                className={`transition-all duration-700 absolute top-[50%] text-[3vw] p-2 md:text-3xl md:p-4 rounded-lg bg-[var(--color-text)] text-[var(--color-primary)] ${activeIndex === index
-                                    ? 'opacity-100 transition-y-0'
-                                    : 'opacity-0 transition-y-4'
+                                className={`transition-all duration-700 absolute top-[50%] xl:[transform:translate(0,-50%)] text-[3vw] p-2 md:text-3xl md:p-4 rounded-lg bg-[var(--color-text)] text-[var(--color-primary)] ${activeIndex === index
+                                        ? 'opacity-100 translate-y-0'
+                                        : 'opacity-0 translate-y-4'
                                     }`}
                             >
                                 <div className="absolute top-[50%] left-full -mt-2 border-l-[10px] border-t-[5px] border-b-[15px] border-solid border-transparent border-l-[var(--color-text)]"></div>
