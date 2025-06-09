@@ -15,7 +15,7 @@ export default function CompetitiveEdge() {
                     <div className="text-neutral-500">Your AI teaching assistant, Olé, curates personalized data science learning paths tailored to your team&apos;s setting. With Olé, employees can successfully navigate their upskilling journey, ensuring they are prepared for tomorrow&apos;s challenges.</div>
                 </div>
                 <FadeInSection fadey='up' className="lg:w-1/2">
-                    <Image src="/ChatGif.gif" className="!h-auto !relative" alt="gif load failed." fill />
+                    <Image src="/ChatGif.gif" className="lazy-gif !h-auto !relative" alt="gif load failed." fill />
                 </FadeInSection>
             </div>
         </div>

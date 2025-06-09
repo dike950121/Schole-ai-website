@@ -43,14 +43,14 @@ export default function BasdSwissExcellenceAIResearch() {
     }, []);
 
     return (
-        <div className="max-w-[1500px] px-8 text-center mx-auto my-40">
+        <div className="max-w-[1500px] px-8 text-center mx-auto">
             <div className="xl:hidden text-center">
                 <div className="text-[40px] font-bold my-8 w-[90%] mx-auto">Based on Swiss Excellence in AI Research</div>
                 <div className="text-2xl text-neutral-500 mt-4">
                     Scholé is based on cutting-edge scientific research in machine learning developed at the EPFL Machine Learning for Education research group and supported by the EPFL AI Center and EPFL LEARN Center.
                 </div>
             </div>
-            <div className="flex gap-8 my-20 relative text-center">
+            <div className="flex gap-8 relative text-center">
                 <div className="py-8 w-1/3 justify-end xl:justify-between xl:w-1/2 sticky flex gap-8 top-0 [height:fit-content]">
                     <div className="hidden xl:block w-3/5">
                         <div className="text-[40px] font-bold my-8 w-[90%] mx-auto">Based on Swiss Excellence in AI Research</div>
@@ -73,7 +73,7 @@ export default function BasdSwissExcellenceAIResearch() {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-col gap-8 px-8 py-16 w-2/3 xl:w-1/2 bg-[var(--color-secondary)] rounded-lg">
+                <div className="flex flex-col gap-8 px-8 py-16 w-2/3 xl:w-1/2 bg-[var(--text-secondary)] rounded-lg">
                     {[
                         "/Vinitra Swamy and Paola Mejia.jpg",
                         "/Navigating Self-regulated Learning Dimensions.webp",

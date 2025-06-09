@@ -26,7 +26,7 @@ export default function MenuItem({ text, href, className }: MenuItemProps) {
         <>
             <a href={href} className={`relative ${className}`} onMouseOver={mouseOverHander} onMouseOut={mouseOutHandler}>
                 {text}
-                <div className={"block absolute cursor-pointer bg-[var(--color-text)] h-[1px] duration-[0.4s] pointer " + (isOver ? "animateover" : (isOut ? "animateout" : "left-0 w-0")) }></div>
+                <div className={"block absolute cursor-pointer bg-[#FFA500] text-[#FFA500] h-[1px] duration-[0.4s] pointer " + (isOver ? "animateover" : (isOut ? "animateout" : "left-0 w-0")) }></div>
             </a>
         </>
     )

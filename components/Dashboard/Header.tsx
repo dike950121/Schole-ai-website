@@ -9,6 +9,8 @@ function HeaderContent() {
     const [logourl, setLogourl] = useState("/Logo-light.png");
     const [isDropdownOpen, setIsDropdownOpen] = useState(true);
     const [isMenuDropdownOpen, setIsMenuDropdownOpen] = useState(true);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const theme = window.location.search.includes('theme=dark') ? 'dark' : 'light';
@@ -22,6 +24,37 @@ function HeaderContent() {
             setLogourl("/Logo-dark.png");
         }
     }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+            
+            setLastScrollY(currentScrollY);
+        };
+
+        const handleMouseMove = (e: MouseEvent) => {
+            // Show header when mouse is within 50px of the top of the viewport
+            if (e.clientY <= 50) {
+                setIsVisible(true);
+            } else if (window.scrollY > 100) {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('mousemove', handleMouseMove);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, [lastScrollY]);
 
     const handleThemeSwitch = () => {
         const newTheme = !isDarkMode;
@@ -37,7 +70,7 @@ function HeaderContent() {
 
     return (
         <>
-            <div className="flex items-center justify-between bg-[var(--color-primary)] px-4 md:px-32 gap-12 w-full">
+            <div className={`flex items-center justify-between fixed top-0 z-10 bg-[var(--color-primary)] px-4 md:px-32 gap-12 w-full transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
                 <Link href="/" className='flex items-center w-auto h-[100px]'>
                     <Image src={logourl} alt="logo" width={200} height={200} />
                 </Link>
@@ -56,7 +89,7 @@ function HeaderContent() {
                         <div className='h-1 w-8 bg-[var(--color-text)]'></div>
                     </button>
                     {
-                        <div className={"flex flex-col gap-2 absolute right-0 p-4 mt-2 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all" + (isMenuDropdownOpen ? " top-[-100px] opacity-0 invisible" : " top-[100%] opacity-1 visible")}>
+                        <div className={"flex flex-col gap-2 absolute right-0 p-4 mt-2 rounded-lg shadow-lg bg-white text-[#FFA500] ring-1 ring-black ring-opacity-5 transition-all" + (isMenuDropdownOpen ? " top-[-100px] opacity-0 invisible" : " top-[100%] opacity-1 visible")}>
                             <MenuItem className="text-center px-12" href="/home" text="Home"></MenuItem>
                             <MenuItem className="text-center px-12" href="/philosophy" text="Philosophy"></MenuItem>
                             <MenuItem className="text-center px-12" href="/pricing" text="Pricing"></MenuItem>
@@ -106,7 +139,7 @@ function HeaderContent() {
                                         Signup
                                     </button>
                                     <button
-                                        className="p-4 w-full rounded-full text-left px-4 py-2 text-sm transition-all hover:bg-[#FFA500] hover:text-white"
+                                        className="p-4 w-full rounded-full text-left px-4 py-2 text-sm text-[#FFA500] transition-all hover:bg-[#FFA500] hover:text-white"
                                         role="menuitem"
                                     >
                                         Login

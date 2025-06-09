@@ -20,7 +20,7 @@ export default function MeetingScholeTeam() {
         <>
             <div className="text-[60px] text-center mt-40 mb-12">Meet the Scholé Team</div>
             <div className="text-center text-xl">Passionate researchers driving the future of learning.</div>
-            <div className="flex justify-center mx-8 my-12">
+            <div id="team-images" className="flex justify-center mx-8 my-12">
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={30}
@@ -39,15 +39,16 @@ export default function MeetingScholeTeam() {
                     ))}
                 </Swiper>
             </div>
-            <div className="bg-[var(--color-secondary)] p-10 md:p-20 lg:p-40 text-center">
-                <div className="m-8 text-xl">We&apos;re growing! Scholé is excited to welcome Aybars, Adrien, Yannis, Jeremy, Othmane and Rohit to our team at EPFL.</div>
-                <Image className="mx-auto" src="/ScholeTeam.jpeg" alt="image load is failed." width={1000} height={1000} />
+            <div className="bg-[var(--color-secondary)] text-center bg-[url('/ScholeTeam.jpeg')] bg-cover bg-center bg-no-repeat bg-opacity-20 w-full aspect-[4/3] relative">
+                <div className="absolute w-full h-full top-0 left-0 bg-[rgba(255,255,255,0.2)]"></div>
+                <div className="mx-auto px-20 pt-[20%] max-w-[1000px] text-3xl font-bold">We&apos;re growing! Scholé is excited to welcome Aybars, Adrien, Yannis, Jeremy, Othmane and Rohit to our team at EPFL.</div>
+                {/* {/* <Image className="mx-auto" src="/Schole.jpeg" alt="image load is failed." width={1000} height={1000} /> */}
             </div>
             <div className="flex flex-col gap-10 p-10 md:p-20 lg:p-40 text-center">
                 <div className="text-3xl font-bold">Let&apos;s Join Forces!</div>
                 <div className="text-[60px] font-bold">Discover Your Future-Ready Workforce</div>
                 <div>Want to explore what Scholé can do for you and your organization? Reach out to us.</div>
-                <button className="mx-auto px-4 py-2 bg-gray-300 text-black font-bold rounded-lg transition-colors duration-600 hover:text-white hover:bg-[#888888]">Partner With Scholé</button>
+                <button className="mx-auto px-4 py-2 font-bold rounded-lg transition-colors duration-600 bg-[var(--color-tertiary)] text-black hover:text-white hover:bg-[var(--color-secondary)]">Partner With Scholé</button>
             </div>
         </>
     );

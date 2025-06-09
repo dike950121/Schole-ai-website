@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 export default function NewVisionLearningAI() {
     return (
         <div className="overflow-hidden">
-            <div style={{ perspective: 1000 }}>
+            <div className="mt-40" style={{ perspective: 1000 }}>
                 <motion.div
                     className="flex flex-col lg:flex-row items-center mx-auto sm:max-w-[700px] lg:max-w-[1000px] xl:max-w-[1160px] 2xl:max-w-[1200px] p-4 sm:p-8 border outline border-[#333333] outline-[#333333] outline-1 outline-offset-4 mt-32 mb-8 rounded-md"
                     style={{

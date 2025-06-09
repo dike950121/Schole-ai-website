@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import GlowIcon from "../GrowIcon";
 import Image from "next/image";
 
@@ -48,7 +48,6 @@ const EmpowerAcrossVariousDomains = () => {
     const height = useTransform(scrollYProgress, [unsubscribearea.top, unsubscribearea.bottom], ["0%", "100%"]);
 
     // Display the current card based on the currentCardIndex
-    const currentCard = cardArr.length > 0 ? cardArr[currentCardIndex % cardArr.length] : null;
 
     return (
         <>
@@ -64,7 +63,7 @@ const EmpowerAcrossVariousDomains = () => {
                 </div>
             </div>
             <div className="relative h-[600vh]">
-                <div className="max-w-[1000px] mx-auto px-20 py-4 flex flex-col lg:flex-row gap-16 justify-between sticky top-20">
+                <div className="max-w-[1000px] mx-auto px-20 xl:px-4 py-4 flex flex-col lg:flex-row gap-16 justify-between sticky top-20">
                     <div className="hidden lg:block pt-12 h-screen w-full lg:w-1/2">
                         <div className="text-[#FFA500] text-xl">
                             <GlowIcon className="mr-3 inline [vertical-align:baseline]" />
@@ -78,19 +77,32 @@ const EmpowerAcrossVariousDomains = () => {
                     </div>
                     <div className="gap-16 flex justify-between w-full lg:w-1/2">
                         <div className="top-0 lg:top-20 relative w-full h-auto">
-                            <AnimatePresence mode="wait">
-                                {currentCard && (
+                            <div id="empower-images" className="relative h-full min-w-[300px] lg:min-w-[400px] max-w-[600px]">
+                                {cardArr.map((card, index) => (
                                     <motion.div
-                                        key={currentCard}
+                                        key={card}
                                         initial={{ opacity: 0, y: -100, scale: 0.5 }}
-                                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                                        exit={{ opacity: 0, y: 100, scale: 0.5 }}
+                                        animate={{ 
+                                            opacity: currentCardIndex === index ? 1 : 0,
+                                            y: currentCardIndex === index ? 0 : -100,
+                                            scale: currentCardIndex === index ? 1 : 0.5,
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            right: 0,
+                                            bottom: 0
+                                        }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <Image src={currentCard} alt="card image load failed." fill />
+                                        <Image 
+                                            src={card} 
+                                            alt="card image load failed." 
+                                            fill 
+                                            priority={true}
+                                        />
                                     </motion.div>
-                                )}
-                            </AnimatePresence>
+                                ))}
+                            </div>
                         </div>
                         <div className="h-[72vh] flex w-4 flex-col items-center">
                             <span className="page">01</span>
