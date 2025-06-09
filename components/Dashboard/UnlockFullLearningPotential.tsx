@@ -12,8 +12,8 @@ export default function UnlockFullLearningPotential() {
         <span>Team Collaboration</span>
       </div>
       <div className="text-[60px] font-bold my-8">Unlock Your Team&apos;s Full Learning Potential</div>
-      <div className="flex gap-8">
-        <div  className="bg-[var(--color-secondary)] rounded-lg w-1/3 py-8 relative group transition-transform hover:[transform:scale(0.95)] duration-[.8s]">
+      <div className="flex flex-col lg:flex-row gap-8">
+        <div  className="bg-[var(--color-secondary)] rounded-lg w-full lg:w-1/3 py-8 relative group transition-transform hover:[transform:scale(0.95)] duration-[.8s]">
             <Parallax speed={4}>
               <Image src="/Flexible.png" alt="logo" className="mx-auto" width={100} height={100} />
             </Parallax>
@@ -28,7 +28,7 @@ export default function UnlockFullLearningPotential() {
             </div>
             <div className="absolute w-px h-[86px] left-0 top-[80%] z-[1] opacity-0 [background:linear-gradient(0deg,_rgba(59,_56,_65,_0)_22.4%,_#FFA500_60.94%,_rgba(59,_56,_65,_0))] [transition:top_0.8s,opacity_0.4s_linear] group-hover:top-[20%] group-hover:opacity-100 [will-change:top,opacity]"></div>
         </div>
-        <div className="bg-[var(--color-secondary)] rounded-lg w-1/3 py-8 relative group transition-transform hover:[transform:scale(0.95)] duration-[.8s]">
+        <div className="bg-[var(--color-secondary)] rounded-lg w-full lg:w-1/3 py-8 relative group transition-transform hover:[transform:scale(0.95)] duration-[.8s]">
             <Parallax speed={6}>
               <Image src="/Self-Regulated.png" alt="logo" className="mx-auto" width={100} height={100} />
             </Parallax>
@@ -43,7 +43,7 @@ export default function UnlockFullLearningPotential() {
             </div>
             <div className="absolute w-px h-[86px] left-0 top-[80%] z-[1] opacity-0 [background:linear-gradient(0deg,_rgba(59,_56,_65,_0)_22.4%,_#FFA500_60.94%,_rgba(59,_56,_65,_0))] [transition:top_0.8s,opacity_0.4s_linear] group-hover:top-[20%] group-hover:opacity-100 [will-change:top,opacity]"></div>
         </div>
-        <div className="bg-[var(--color-secondary)] rounded-lg w-1/3 py-8 relative group transition-transform hover:[transform:scale(0.95)] duration-[.8s]">
+        <div className="bg-[var(--color-secondary)] rounded-lg w-full lg:w-1/3 py-8 relative group transition-transform hover:[transform:scale(0.95)] duration-[.8s]">
             <Parallax speed={3}>
               <Image src="/Adaptive.png" alt="logo" className="mx-auto" width={100} height={100} />
             </Parallax>

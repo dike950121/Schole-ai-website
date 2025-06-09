@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 
-export default function FadeInSection({ children, fadey = "", fadex = "", className = "" }: { children: React.ReactNode, fadey: string, fadex: string, className: string }) {
+export default function FadeInSection({ children, fadey = "", fadex = "", className = "" }: { children: React.ReactNode, fadey?: string, fadex?: string, className: string }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false }); // triggers once
   const controls = useAnimation();

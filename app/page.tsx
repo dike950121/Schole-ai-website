@@ -17,7 +17,6 @@ export default function Dashboard() {
   return (
     <>
       <div className="bg-[var(--color-primary)] text-[var(--color-text)]">
-        <div className="h-1 bg-black"></div>
         <Header />
         <NewVisionLearningAI />
         <InstructionsCompanies />

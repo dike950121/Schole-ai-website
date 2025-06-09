@@ -50,7 +50,7 @@ export default function SummaryTextReveal() {
   }, []);
 
   return (
-    <div id="reveal-type" className="mx-auto max-w-[1200px] px-20 py-40 text-[60px]">{text}
+    <div id="reveal-type" className="mx-auto max-w-[1500px] px-20 py-40 text-2xl md:text-[4vw] md:leading-[1.5]">{text}
     </div>
   );
 }
