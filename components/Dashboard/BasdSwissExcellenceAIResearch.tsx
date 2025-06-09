@@ -62,12 +62,12 @@ export default function BasdSwissExcellenceAIResearch() {
                         {imageTexts.map((text, index) => (
                             <div
                                 key={index}
-                                className={`transition-all duration-700 absolute top-[50%] text-[3vw] p-2 md:text-3xl md:p-4 rounded-lg bg-[var(--color-tertiary)] text-[var(--color-primary)] ${activeIndex === index
+                                className={`transition-all duration-700 absolute top-[50%] text-[3vw] p-2 md:text-3xl md:p-4 rounded-lg bg-[var(--color-text)] text-[var(--color-primary)] ${activeIndex === index
                                     ? 'opacity-100 transition-y-0'
                                     : 'opacity-0 transition-y-4'
                                     }`}
                             >
-                                <div className="absolute top-[50%] left-full -mt-2 border-l-[10px] border-t-[5px] border-b-[15px] border-solid border-transparent border-l-[var(--color-tertiary)]"></div>
+                                <div className="absolute top-[50%] left-full -mt-2 border-l-[10px] border-t-[5px] border-b-[15px] border-solid border-transparent border-l-[var(--color-text)]"></div>
                                 {text.description}
                             </div>
                         ))}

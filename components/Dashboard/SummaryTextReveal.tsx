@@ -38,8 +38,8 @@ export default function SummaryTextReveal() {
       gsap.from(text2.words, {
         scrollTrigger: {
           trigger: word,
-          start: "top 60%",
-          end: "bottom 50%",
+          start: "top 0%",
+          end: "bottom 10%",
           scrub: true,
           toggleActions: "play play reverse reverse",
         },
@@ -50,7 +50,9 @@ export default function SummaryTextReveal() {
   }, []);
 
   return (
-    <div id="reveal-type" className="mx-auto max-w-[1500px] px-20 py-40 text-2xl md:text-[4vw] md:leading-[1.5]">{text}
+    <div className="h-[150vh] relative">
+      <div id="reveal-type" className="sticky top-0 mx-auto max-w-[1000px] px-20 py-40 text-2xl font-bold md:text-[4vw] md:leading-[1.5] lg:text-[40px]">{text}
+      </div>
     </div>
   );
 }
