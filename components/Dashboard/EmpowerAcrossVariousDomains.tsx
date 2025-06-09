@@ -82,11 +82,10 @@ const EmpowerAcrossVariousDomains = () => {
                                 {currentCard && (
                                     <motion.div
                                         key={currentCard}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 100 }}
-                                        transition={{ duration: 0.5 }}
-                                        className=""
+                                        initial={{ opacity: 0, y: -100, scale: 0.5 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        exit={{ opacity: 0, y: 100, scale: 0.5 }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <Image src={currentCard} alt="card image load failed." fill />
                                     </motion.div>

@@ -5,7 +5,7 @@ import FadeInSection from "../FadeInSection";
 export default function ExploreOurDynamicLearningFormats() {
     return (
         <div className="flex flex-col text-center lg:flex-row lg:text-left items-center gap-16 mx-auto my-20 p-4 max-w-[1000px] overflow-hidden">
-            <FadeInSection fadex='right' fadey="down" className="py-8 w-full lg:w-1/2">
+            <FadeInSection fadex='right' fadey="down" distance={200} duration={0.5} className="py-8 w-full lg:w-1/2">
                 <div className="text-[#FFA500] text-xl">
                     <GrowIcon className="mr-3 inline [vertical-align:baseline]" />
                     <span>You decide how - we generate it on the fly!</span>
@@ -17,7 +17,7 @@ export default function ExploreOurDynamicLearningFormats() {
                     <li>AI role-plays that simulate real-world scenarios.</li>
                 </ul>
             </FadeInSection>
-            <FadeInSection fadex='left' fadey="down" className="flex flex-col gap-8 px-8 py-16 lg:w-1/2 bg-[var(--color-secondary)] rounded-lg relative group">
+            <FadeInSection fadex='left' fadey="down" distance={200} duration={0.5} className="flex flex-col gap-8 px-8 py-16 lg:w-1/2 bg-[var(--color-secondary)] rounded-lg relative group">
                 <Image src="/Multimodality.png" className="!h-auto !relative" alt="img load failed." fill />
                 <div className="text-3xl">Multimodality</div>
                 <p className="text-xl">At Scholé, we believe that adult learners should learn what they want, when they want, the way they want -- whether that means a podcast for the morning commute, a smartphone game for a 5-minute break, or a video with interactive questions.</p>
